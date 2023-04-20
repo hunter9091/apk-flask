@@ -1,4 +1,4 @@
-FROM alpine:3.8
+FROM ubuntu
 
 RUN mkdir /var/flaskapp
 
@@ -6,9 +6,9 @@ WORKDIR /var/flaskapp
 
 COPY .  .
 
-RUN apk update
+RUN apt-get update
 
-RUN apk add python3
+RUN apt-get install python3 net-tools python3-pip
 
 RUN pip3 install -r requirement.txt
 
